@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}" />
 </head>
 <body>
-
+    <form th:action="@{/signup}"  method="post"> <!-- th:object="${signUpForm}" -->
+        <div class="wrapper">
+            <div class="title">
+                Sign Up To Chatter
+            </div>
+            <div class="form">
+                <div class="input_field">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="input"/>
+                </div>
+                <div class="input_field">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" class="input"/>
+                </div>
+                <div class="input_field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="input"/>
+                </div>
+                <div class="input_field">
+                    <label for="rePassword">Re-Password</label>
+                    <input type="password"  id="rePassword" class="input"/>
+                </div>
+                <div class="input_field">
+                    <label for="telephoneNumber">Telephone Number</label>
+                    <input type="tel" class="input" id="telephoneNumber"/>
+                </div>
+                <div class="input_field terms">
+                    <label class="check">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>I agree to the terms and conditions.</p>
+                </div>
+                <div class="input_field">
+                    <input type="submit" value="Register" class="btn"/>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
