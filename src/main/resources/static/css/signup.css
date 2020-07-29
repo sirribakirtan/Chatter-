@@ -7,8 +7,12 @@
     font-family: 'Montserrat',sans-serif;
 }
 body{
-    background: #1E90FF;
+    background-image: url("../images/signup.jpg");
     padding: 0 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .wrapper{
     max-width: 500px;
