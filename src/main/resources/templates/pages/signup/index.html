@@ -23,28 +23,49 @@
             </div>
             <div class="input_field">
                 <label for="password">Password</label>
-                <input type="password" id="password" th:field="${person.password}" class="input"/>
+                <input type="password" id="password" name="password" onChange="onChange()" th:field="${person.password}"
+                       required="" class="input"/>
             </div>
             <div class="input_field">
                 <label for="rePassword">Re-Password</label>
-                <input type="password"  id="rePassword" class="input"/>
+                <input type="password" id="rePassword" name="rePassword"  onChange="onChange()" class="input"/>
+                <span id='message'></span>
             </div>
             <div class="input_field">
-                <label for="telephoneNumber">Telephone Number</label>
-                <input type="tel" class="input" id="telephoneNumber" th:field="${person.telephoneNumber}"/>
+                <label for="phone">Telephone Number</label>
+                <input type="tel" class="input" id="phone" placeholder="555-555-55-55"
+                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" th:field="${person.telephoneNumber}" required/>
             </div>
-            <div class="input_field terms">
-                <label class="check">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <p>I agree to the terms and conditions.</p>
+            <label class="check">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label >I agree to the terms and conditions.</label >
+            <div>
+            <label class="check">
+                <input type="checkbox" class="largerCheckbox">
+                <span class="checkmark"></span>
+            </label>
+            <label >Remember Me</label >
             </div>
             <div class="input_field">
-                <input type="submit" value="Register"  class="btn"/>
+                <input type="submit" id="btnSubmit" value="Register"  class="btn"/>
+                <input type="submit" id="btnLogin" value="Login"  class="btnL"/>
             </div>
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    function onChange() {
+        let password = document.querySelector('input[name=password]');
+        let confirm = document.querySelector('input[name=rePassword]');
+        if (confirm.value === password.value) {
+            confirm.setCustomValidity('');
+        }
+        else {
+            confirm.setCustomValidity('Passwords do not match');
+        }
+    }
+</script>
 </body>
 </html>

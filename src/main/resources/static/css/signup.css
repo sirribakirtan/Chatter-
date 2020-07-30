@@ -21,6 +21,10 @@ body{
     margin: 20px auto;
     padding: 30px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+    position: absolute;
+    right: 65px;
+    top: 45px;
+    border: 1px solid #1E90FF;
 }
 .wrapper .title{
     font-size: 24px;
@@ -71,13 +75,21 @@ body{
     top: 0;
     left: 0;
     opacity: 0;
+    margin-right: 5em;
+    width: 26px;
+    height: 14px;
 }
+
 .wrapper .form .input_field .check .checkmark{
     width: 15px;
     height: 15px;
     border: 1px solid #1E90FF;
     display: block;
     position:  relative;
+}
+.wrapper .form .input_field .check .largerCheckbox{
+    width: 40px;
+    height: 40px;
 }
 .wrapper .form .input_field .check .checkmark:before{
     content: "";
@@ -98,7 +110,20 @@ body{
     display: block;
 }
 .wrapper .form .input_field .btn{
-    width: 100%;
+     width: 48%;
+     padding: 8px 10px;
+     font-size: 15px;
+     border: 0;
+     background: #1E90FF;
+     color: #fff;
+     cursor: pointer;
+     border-radius: 3px;
+     outline: none;
+     position: relative;
+     left: 230px;
+ }
+.wrapper .form .input_field .btnL{
+    width: 48%;
     padding: 8px 10px;
     font-size: 15px;
     border: 0;
@@ -107,11 +132,16 @@ body{
     cursor: pointer;
     border-radius: 3px;
     outline: none;
+    position: relative;
+    left: -208px
 }
 .wrapper .form .input_field:last-child{
     margin-bottom: 0;
 }
 .wrapper .form .input_field .btn:hover{
+     background: navy;
+ }
+.wrapper .form .input_field .btnL:hover{
     background: navy;
 }
 @media (max-width: 420px) {
