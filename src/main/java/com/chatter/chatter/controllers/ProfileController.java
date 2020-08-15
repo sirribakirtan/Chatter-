@@ -10,6 +10,6 @@ public class ProfileController {
 
     @GetMapping("")
     public String getProfilePage() {
-        return "pages/profile/index";
+        return "pages/profile";
     }
 }

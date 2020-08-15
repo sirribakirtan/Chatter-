@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;
+}
+body{
+    background-image: url("../../images/signup.jpg");
+    padding: 0 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    background: #ffff;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+    position: absolute;
+    right: 65px;
+    top: 45px;
+    border: 1px solid #1E90FF;
+}
+.wrapper .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.wrapper .form{
+    width: 100%;
+}
+.wrapper .form .input_field{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.wrapper .form .input_field label{
+    width: 200px;
+    color:#757575;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.wrapper .form .input_field .input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.wrapper .form .input_field .input:focus{
+    border: 1px solid #1E90FF;
+}
+.wrapper .form .input_field p{
+    font-size: 15px;
+    color: #757575;
+}
+.wrapper .form .input_field .check{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.wrapper .form .input_field .check input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin-right: 5em;
+    width: 26px;
+    height: 14px;
+}
+
+.wrapper .form .input_field .check .checkmark{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #1E90FF;
+    display: block;
+    position:  relative;
+}
+.wrapper .form .input_field .check .largerCheckbox{
+    width: 40px;
+    height: 40px;
+}
+.wrapper .form .input_field .check .checkmark:before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 5px;
+    height: 2px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff ;
+    transform: rotate(-45deg);
+    display: none;
+}
+.wrapper .form .input_field .check input[type="checkbox"]:checked ~ .checkmark{
+    background: #1E90FF;
+}
+.wrapper .form .input_field .check input[type="checkbox"]:checked ~ .checkmark:before{
+    display: block;
+}
+.wrapper .form .input_field .btn{
+     width: 48%;
+     padding: 8px 10px;
+     font-size: 15px;
+     border: 0;
+     background: #1E90FF;
+     color: #fff;
+     cursor: pointer;
+     border-radius: 3px;
+     outline: none;
+     position: relative;
+ }
+.wrapper .form .input_field .btnL{
+    width: 48%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 0;
+    background: #1E90FF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    position: relative;
+    left: 10px;
+}
+.wrapper .form .input_field:last-child{
+    margin-bottom: 0;
+}
+.wrapper .form .input_field .btn:hover{
+     background: navy;
+ }
+.wrapper .form .input_field .btnL:hover{
+    background: navy;
+}
+@media (max-width: 420px) {
+    .wrapper .form .input_field{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .wrapper .form .input_field label{
+        margin-bottom: 5px;
+    }
+    .wrapper .form .input_field.terms{
+        flex-direction: row;
+    }
+}

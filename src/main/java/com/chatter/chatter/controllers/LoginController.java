@@ -10,6 +10,6 @@ public class LoginController {
 
     @GetMapping
     public String getLoginPage() {
-        return "pages/login/index";
+        return "pages/login";
     }
 }
