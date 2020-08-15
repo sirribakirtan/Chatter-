@@ -19,17 +19,17 @@ public class SignUpController {
     public String getSignUpPage(Model model) {
         Person person = new Person();
         model.addAttribute("person",person);
-        return "pages/signup/index";
+        return "pages/signup";
     }
 
     @PostMapping("")
     public String register(@Valid @ModelAttribute("person") Person person, Errors errors, Model model) {
         System.out.println(person.getEmail());
         if (errors.hasErrors()) {
-            return "pages/signup/index";
+            return "pages/signup";
         } else {
             model.addAttribute("message", "Registration successfully...");
-            return "pages/signup/su";
+            return "pages/signup";
         }
 
     }

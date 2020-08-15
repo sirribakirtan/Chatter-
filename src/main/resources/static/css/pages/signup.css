@@ -7,7 +7,7 @@
     font-family: 'Montserrat',sans-serif;
 }
 body{
-    background-image: url("../images/signup.jpg");
+    background-image: url("../../images/signup.jpg");
     padding: 0 10px;
     background-position: center;
     background-repeat: no-repeat;
@@ -120,7 +120,6 @@ body{
      border-radius: 3px;
      outline: none;
      position: relative;
-     left: 230px;
  }
 .wrapper .form .input_field .btnL{
     width: 48%;
@@ -133,7 +132,7 @@ body{
     border-radius: 3px;
     outline: none;
     position: relative;
-    left: -208px
+    left: 10px;
 }
 .wrapper .form .input_field:last-child{
     margin-bottom: 0;
