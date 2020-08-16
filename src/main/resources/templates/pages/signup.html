@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/pages/signup.css}" />
     <div class="container">
         <div class="col d-flex justify-content-center">
-            <div class="card bg-light col-12 rounded" style="max-width: 38rem;">
+            <div id="card" class="card bg-light col-12 rounded">
                 <div class="card-header text-center">
                     <h2>Sign Up to Chatter</h2>
                 </div>
@@ -20,6 +20,7 @@
                             <label for="full_name" class="col-sm-3 col-form-label">Full Name</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="full_name" placeholder="Enter Name Surname" th:field="${person.fullName}" name="full_name" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,11 +57,11 @@
                             <label class="custom-control-label mb-4" for="checkbox-2">Remember Me </label>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <input type="submit" id="btnRegistration" value="Register"  class="btn btn-primary form-control btn-block"/>
+                            <div class="col-sm-12 col-md-8 col-lg-6 d-flex justify-content-center">
+                                <input type="submit" id="btnRegistration" value="Register"  class="btn btn-primary w-75"/>
                             </div>
-                            <div class="col">
-                                <input type="submit" id="btnLogin" value="Login"  class="btn btn-primary form-control btn-block "/>
+                            <div class="col-sm-12 col-md-8 col-lg-6 d-flex justify-content-center">
+                                <a th:href="@{/login}" class="btn btn-outline-primary w-75">Login</a>
                             </div>
                         </div>
                     </form>
