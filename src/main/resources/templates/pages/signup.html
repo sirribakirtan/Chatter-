@@ -9,65 +9,82 @@
 <div layout:fragment="content">
     <link rel="stylesheet" type="text/css" th:href="@{/css/pages/signup.css}" />
     <div class="container">
-        <form action="#" th:action="@{/signup}" th:method="post" th:object="${person}">
-            <div class="wrapper">
-                <div class="title">
-                    Sign Up To Chatter
+        <div class="col d-flex justify-content-center">
+            <div class="card bg-light col-12 rounded" style="max-width: 38rem;">
+                <div class="card-header text-center">
+                    <h2>Sign Up to Chatter</h2>
                 </div>
-                <div class="form">
-                    <div class="input_field">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" th:field="${person.fullName}" class="input" required="">
-                    </div>
-                    <div class="input_field">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" th:field="${person.email}" class="input" required=""/>
-                    </div>
-                    <div class="input_field">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" onChange="onChange()" th:field="${person.password}"
-                               required="" class="input"/>
-                    </div>
-                    <div class="input_field">
-                        <label for="rePassword">Re-Password</label>
-                        <input type="password" id="rePassword" name="rePassword"  onChange="onChange()" class="input"/>
-                        <span id='message'></span>
-                    </div>
-                    <div class="input_field">
-                        <label for="phone">Telephone Number</label>
-                        <input type="tel" class="input" id="phone" placeholder="555-555-55-55"
-                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" th:field="${person.telephoneNumber}" required/>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label" for="check1">
-                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Option 1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label" for="check2">
-                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">Option 2
-                        </label>
-                    </div>
-                    <div class="input_field">
-                        <input type="submit" id="btnSubmit" value="Register"  class="btn btn-primary ml-1"/>
-                        <input type="submit" id="btnLogin" value="Login"  class="btn btn-primary ml-4"/>
-                    </div>
+                <div class="card-body">
+                    <form action="#" class="needs-validation"  th:action="@{/signup}" th:method="post" th:object="${person}" novalidate>
+                        <div class="form-group row">
+                            <label for="full_name" class="col-sm-3 col-form-label">Full Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="full_name" placeholder="Enter Name Surname" th:field="${person.fullName}" name="full_name" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" th:field="${person.email}" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="pwd" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="pwd" th:field="${person.password}" placeholder="Enter password" name="pwd">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="re_pwd" class="col-sm-3 col-form-label">Re-Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="re_pwd" placeholder="Enter Re-password" name="re_pwd">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tel" class="col-sm-3 col-form-label">Telephone N.</label>
+                            <div class="col-sm-9">
+                                <input type="tel" class="form-control mb-2" id="tel" placeholder="Enter Telephone N." th:field="${person.telephoneNumber}" name="tel">
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="checkbox-1">
+                            <label class="custom-control-label mb-2" for="checkbox-1">I agree to the <a href="#">Terms and Conditions</a>.</label>
+                        </div>
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="checkbox-2">
+                            <label class="custom-control-label mb-4" for="checkbox-2">Remember Me </label>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" id="btnRegistration" value="Register"  class="btn btn-primary form-control btn-block"/>
+                            </div>
+                            <div class="col">
+                                <input type="submit" id="btnLogin" value="Login"  class="btn btn-primary form-control btn-block "/>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
-    function onChange() {
-        let password = document.querySelector('input[name=password]');
-        let confirm = document.querySelector('input[name=rePassword]');
-        if (confirm.value === password.value) {
-            confirm.setCustomValidity('');
-        }
-        else {
-            confirm.setCustomValidity('Passwords do not match');
-        }
-    }
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 </script>
 </body>
 </html>
