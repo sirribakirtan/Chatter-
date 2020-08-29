@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user-thumbnail</title>
+</head>
+<body>
+<div th:fragment="user-thumbnail">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fragments/home/user-thumbnail.css}"/>
+    <div class="user-thumbnail-div m-3 d-flex flex-column justify-content-center align-items-center">
+        <div id="user-image" class="h-75">
+            <img th:src="${'https://bootdey.com/img/Content/avatar/avatar6.png'}"
+                 th:alt="${'Message'}"
+                 class="rounded-circle h-100 mb-2">
+        </div>
+        <div id="user-name" class="h-25 mt-2">
+            <p th:text="${'user.fullName'}">User Image</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

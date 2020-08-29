@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{fragments/layouts/main}">
 <head>
     <meta charset="UTF-8">
-    <title>HOME PAGE</title>
+    <title>home</title>
 </head>
 <body>
-    <h1>WELCOME PAGE</h1>
+<div layout:fragment="content">
+    <link rel="stylesheet" type="text/css" th:href="@{css/pages/home.css}"/>
+    <div class="container rounded" id="home-div">
+        <div id="friends-list" class="d-flex flex-row border-bottom border-dark">
+            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
+            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
+            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
+        </div>
+        <div id="main-area">
+            <div class="row">
+                <div id="chat-area" class="col-sm-12 col-md-9">
+                    <div class="p-4">
+                        <h3 th:text="'User Name'" class="m-0"></h3>
+                    </div>
+                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
+                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
+                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
+                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
+                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
+                </div>
+                <div id="user-context" class="col-sm-12 col-md-3">
+                    <div th:replace="~{fragments/pages/home/user-context.html :: user-context}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
