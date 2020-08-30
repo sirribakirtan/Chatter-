@@ -10,29 +10,11 @@
 <body>
 <div layout:fragment="content">
     <link rel="stylesheet" type="text/css" th:href="@{css/pages/home.css}"/>
-    <div class="container rounded" id="home-div">
-        <div id="friends-list" class="d-flex flex-row border-bottom border-dark">
-            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
-            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
-            <div th:replace="fragments/pages/home/user-thumbnail.html :: user-thumbnail"></div>
+    <div class="container-fluid rounded" id="home-div">
+        <div th:with="friendList=${user.getFriendList()}">
+            <div th:replace="~{fragments/pages/home/friends-list.html :: friends-list}"></div>
         </div>
-        <div id="main-area">
-            <div class="row">
-                <div id="chat-area" class="col-sm-12 col-md-9">
-                    <div class="p-4">
-                        <h3 th:text="'User Name'" class="m-0"></h3>
-                    </div>
-                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
-                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
-                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
-                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
-                    <div th:replace="~{fragments/pages/home/message.html :: message}"></div>
-                </div>
-                <div id="user-context" class="col-sm-12 col-md-3">
-                    <div th:replace="~{fragments/pages/home/user-context.html :: user-context}"></div>
-                </div>
-            </div>
-        </div>
+        <div th:replace="~{fragments/pages/home/main-area.html :: main-area}"></div>
     </div>
 </div>
 </body>

@@ -1,4 +1,4 @@
-package com.chatter.chatter.model;
+package com.chatter.chatter.models;
 
 public class Person {
 

@@ -1,6 +1,6 @@
 package com.chatter.chatter.controllers;
 
-import com.chatter.chatter.model.Person;
+import com.chatter.chatter.models.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;

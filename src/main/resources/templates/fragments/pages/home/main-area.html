@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main-area</title>
+</head>
+<body>
+<div th:fragment="main-area" id="main-area" class="py-4 py-md-2">
+    <!--/*@thymesVar id="user" type="com.chatter.chatter.models.appModels.User"*/-->
+    <!--/*@thymesVar id="messageReceiver" type="com.chatter.chatter.models.appModels.User"*/-->
+    <div class="row">
+        <div id="chat-area" class="col-md-12 col-lg-9">
+            <div class="px-4 pb-4 d-flex justify-content-between">
+                <h3 th:text="${messageReceiver.getFirstName()}" class="m-0"></h3>
+                <h3 th:text="${user.getFirstName()}"></h3>
+            </div>
+            <div th:each="message : ${user.getConversation(1)}"
+                 th:with="isMessageSent=${message.getSender() == user}"
+                 th:insert="~{fragments/pages/home/message.html :: message}">
+            </div>
+        </div>
+        <div id="user-context" class="d-none d-lg-block col-md-3">
+            <div th:replace="~{fragments/pages/home/user-context.html :: user-context}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
