@@ -1,0 +1,10 @@
+.panel-default > .panel-heading > .panel-title.collapsed > a{
+    color: #333;
+    border-color: #ddd;
+}
+
+
+.panel-default > .panel-heading > .panel-title:not(.collapsed) > a{
+    color: #fff;
+    border-color: red;
+}

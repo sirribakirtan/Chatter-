@@ -45,12 +45,12 @@
                         <br>
                         <div class="panel-group" id="accordion">
                             <div class="container-fluid">
-                                <div class="row bg-secondary pt-2">
-                                    <div th:with="collapseId=${'#collapse1'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                    <div th:with="collapseId=${'#collapse2'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                    <div th:with="collapseId=${'#collapse3'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                    <div th:with="collapseId=${'#collapse4'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                    <div th:with="collapseId=${'#collapse5'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                <div class="row bg-secondary pt-2 justify-content-around">
+                                    <div th:with="collapseId=${'#collapse-profile'}, name='Profile'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse-friends'}, name='Friends'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse-photos'}, name='Photos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse-videos'}, name='Videos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse-settings'}, name='Settings'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
                                 </div>
                             </div>
                         </div>
