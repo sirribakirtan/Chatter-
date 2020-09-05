@@ -31,9 +31,9 @@
     </div>
 </div>
 <div th:fragment="collapse-section" class="panel panel-default col-sm">
+    <!--/*@thymesVar id="collapseId" type="java.lang.String"*/-->
     <div class="panel-heading">
         <h4 class="panel-title">
-            <!--/*@thymesVar id="collapseId" type="java.lang.String"*/-->
             <a data-toggle="collapse" class="text-warning" data-parent="#accordion" th:href="${collapseId}">Profile</a>
         </h4>
         <div th:text="${collapseId}"></div>
