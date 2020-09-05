@@ -5,38 +5,43 @@
     <title>profile-section</title>
 </head>
 <body>
-<div th:fragment="profile" id="collapse1" class="panel-collapse collapse show">
+<div th:fragment="profile"  id="collapse-profile" class="panel-collapse collapse show">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/section-bar-hover.css}"/>
     <div class="panel-body text-center">
-        Profile Section
+        <h4>Profile Section</h4>
     </div>
 </div>
-<div th:fragment="friends" id="collapse2" class="panel-collapse collapse">
+<div th:fragment="friends" id="collapse-friends" class="panel-collapse collapse">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/section-bar-hover.css}"/>
     <div class="panel-body text-center">
-        Friends Section
+        <h4>Friends Section</h4>
     </div>
 </div>
-<div th:fragment="photos" id="collapse3" class="panel-collapse collapse">
+<div th:fragment="photos" id="collapse-photos" class="panel-collapse collapse">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/section-bar-hover.css}"/>
     <div class="panel-body text-center">
-        Photos Section
+        <h4>Photos Section</h4>
     </div>
 </div>
-<div th:fragment="videos" id="collapse4" class="panel-collapse collapse">
+<div th:fragment="videos" id="collapse-videos" class="panel-collapse collapse">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/section-bar-hover.css}"/>
     <div class="panel-body text-center">
-        Videos Section
+        <h4>Videos Section</h4>
     </div>
 </div>
-<div th:fragment="settings" id="collapse5" class="panel-collapse collapse">
+<div th:fragment="settings" id="collapse-settings" class="panel-collapse collapse">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/section-bar-hover.css}"/>
     <div class="panel-body text-center">
-        Settings Section
+        <h4>Settings Section</h4>
     </div>
 </div>
 <div th:fragment="collapse-section" class="panel panel-default col-sm">
     <!--/*@thymesVar id="collapseId" type="java.lang.String"*/-->
+    <!--/*@thymesVar id="name" type="java.lang.String"*/-->
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a data-toggle="collapse" class="text-warning" data-parent="#accordion" th:href="${collapseId}">Profile</a>
+            <a data-toggle="collapse" class="text-warning section" data-parent="#accordion" th:href="${collapseId}" th:text="${name}"></a>
         </h4>
-        <div th:text="${collapseId}"></div>
     </div>
 </div>
 </body>
