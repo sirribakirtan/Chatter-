@@ -11,11 +11,22 @@
 <div layout:fragment="content">
     <link rel="stylesheet" type="text/css" th:href="@{css/pages/home.css}"/>
     <div class="container-fluid rounded" id="home-div">
-        <div th:with="friendList=${user.getFriendList()}">
+        <div class="d-flex w-100" th:with="friendList=${user.getFriendList()}">
             <div th:replace="~{fragments/pages/home/friends-list.html :: friends-list}"></div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
         </div>
-        <div th:replace="~{fragments/pages/home/main-area.html :: main-area}"></div>
+        <div th:replace="~{fragments/pages/home/main-area :: main-area}"></div>
+        <div th:replace="~{fragments/common/side-profile :: side-profile}"></div>
     </div>
 </div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100vw";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
 </body>
 </html>
