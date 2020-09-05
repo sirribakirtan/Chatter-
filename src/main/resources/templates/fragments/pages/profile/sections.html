@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>profile-section</title>
+</head>
+<body>
+<div th:fragment="profile" id="collapse1" class="panel-collapse collapse show">
+    <div class="panel-body text-center">
+        Profile Section
+    </div>
+</div>
+<div th:fragment="friends" id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body text-center">
+        Friends Section
+    </div>
+</div>
+<div th:fragment="photos" id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body text-center">
+        Photos Section
+    </div>
+</div>
+<div th:fragment="videos" id="collapse4" class="panel-collapse collapse">
+    <div class="panel-body text-center">
+        Videos Section
+    </div>
+</div>
+<div th:fragment="settings" id="collapse5" class="panel-collapse collapse">
+    <div class="panel-body text-center">
+        Settings Section
+    </div>
+</div>
+<div th:fragment="collapse-section" class="panel panel-default col-sm">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <!--/*@thymesVar id="collapseId" type="java.lang.String"*/-->
+            <a data-toggle="collapse" class="text-warning" data-parent="#accordion" th:href="${collapseId}">Profile</a>
+        </h4>
+        <div th:text="${collapseId}"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="fragments/layouts/main.html"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="~{fragments/layouts/main.html}"
       lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,6 @@
 <body>
 <div layout:fragment="content" >
     <link rel="stylesheet" type="text/css" th:href="@{/css/pages/profile.css}" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <div class="container fixed-top container-sm profile-header">
         <div class="container-fluid p-4 my-1 bg-light text-black">
             <div class="row">
@@ -47,41 +46,11 @@
                         <div class="panel-group" id="accordion">
                             <div class="container-fluid">
                                 <div class="row bg-secondary pt-2">
-                                    <div class="panel panel-default col-sm">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse1">Profile</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default col-sm">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse2">Friends</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default col-sm">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse3">Photos</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default col-sm">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse4">Videos</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default col-sm">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title ">
-                                                <a data-toggle="collapse"  class="text-warning"data-parent="#accordion" href="#collapse5">Settings</a>
-                                            </h4>
-                                        </div>
-                                    </div>
+                                    <div th:with="collapseId=${'#collapse1'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse2'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse3'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse4'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                                    <div th:with="collapseId=${'#collapse5'}" th:replace="~{fragments/pages/profile/sections :: collapse-section}"></div>
                                 </div>
                             </div>
                         </div>
@@ -90,31 +59,11 @@
             </div>
         </div>
         <div class="container-fluid bg-light">
-            <div id="collapse1" class="panel-collapse collapse show">
-                <div class="panel-body text-center">
-                    Profile Section
-                </div>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-                <div class="panel-body text-center">
-                    Friends Section
-                </div>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse">
-                <div class="panel-body text-center">
-                    Photos Section
-                </div>
-            </div>
-            <div id="collapse4" class="panel-collapse collapse">
-                <div class="panel-body text-center">
-                    Videos Section
-                </div>
-            </div>
-            <div id="collapse5" class="panel-collapse collapse">
-                <div class="panel-body text-center">
-                    Settings Section
-                </div>
-            </div>
+            <div th:replace="~{fragments/pages/profile/sections :: profile}"></div>
+            <div th:replace="~{fragments/pages/profile/sections :: friends}"></div>
+            <div th:replace="~{fragments/pages/profile/sections :: photos}"></div>
+            <div th:replace="~{fragments/pages/profile/sections :: videos}"></div>
+            <div th:replace="~{fragments/pages/profile/sections :: settings}"></div>
         </div>
     </div>
 </div>
