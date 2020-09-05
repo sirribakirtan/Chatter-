@@ -36,3 +36,8 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+#side-profile-button {
+    font-size:40px;
+    cursor:pointer;
+}

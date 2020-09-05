@@ -13,5 +13,10 @@
     <a href="#">Clients</a>
     <a href="#">Contact</a>
 </div>
+<div th:fragment="side-profile-open-button">
+    <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
+    <div id="side-profile-button" class="h-100 d-flex justify-content-center align-items-center"
+         onclick="openNav()">&#9776;</div>
+</div>
 </body>
 </html>
