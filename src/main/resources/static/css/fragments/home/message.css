@@ -1,0 +1,10 @@
+.message-div {
+    height: auto;
+    border-radius: 20px;
+    width: 80%;
+}
+
+.message {
+    width: fit-content;
+    max-width: 80%;
+}

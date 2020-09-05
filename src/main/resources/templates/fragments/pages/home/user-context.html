@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user-context</title>
+</head>
+<body>
+<div th:fragment="user-context" class="user-context h-100">
+    <!--/*@thymesVar id="user" type="com.chatter.chatter.models.appModels.User"*/-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fragments/home/user-context.css}"/>
+    <div class="user-context-div h-100">
+        <div class="user-profile-photo h-25 p-2 d-flex justify-content-center">
+            <img th:src="${user.getProfilePhotoUrl()}"
+                 class="rounded-circle h-100">
+        </div>
+        <div class="context h-75 p-2">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

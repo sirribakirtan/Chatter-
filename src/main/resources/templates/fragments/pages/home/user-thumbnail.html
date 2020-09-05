@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user-thumbnail</title>
+</head>
+<body>
+<div th:fragment="user-thumbnail">
+    <!--/*@thymesVar id="friend" type="com.chatter.chatter.models.appModels.User"*/-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fragments/home/user-thumbnail.css}"/>
+    <div class="user-thumbnail-div m-3 d-flex flex-column justify-content-center align-items-center">
+        <div id="user-image" class="h-75">
+            <img th:src="${friend.getProfilePhotoUrl()}"
+                 th:alt="${friend.getFullName()}"
+                 class="rounded-circle h-100">
+        </div>
+        <div id="user-name" class="h-25">
+            <p class="my-2" th:text="${friend.getFirstName()}">User Image</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

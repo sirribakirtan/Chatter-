@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+</head>
+<body>
+<div th:fragment="message" id="message" class="border-bottom border-secondary">
+    <!--/*@thymesVar id="message" type="com.chatter.chatter.models.appModels.Message"*/-->
+    <!--/*@thymesVar id="isMessageSent" type="boolean"*/-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fragments/home/message.css}"/>
+    <div class="message-div p-2"
+         th:class="'my-2 message' + ' ' + ${isMessageSent ? 'ml-auto mr-3' : 'mr-auto ml-3'}">
+        <div class="card card-body"
+             th:text="${message.getMessageText()}">
+        </div>
+    </div>
+</div>
+</body>
+</html>
