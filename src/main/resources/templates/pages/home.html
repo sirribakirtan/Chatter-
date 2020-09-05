@@ -2,7 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="~{fragments/layouts/main}">
+      layout:decorate="~{fragments/layouts/main}">
 <head>
     <meta charset="UTF-8">
     <title>home</title>
@@ -19,14 +19,5 @@
         <div th:replace="~{fragments/common/side-profile :: side-profile}"></div>
     </div>
 </div>
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "100vw";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
 </body>
 </html>

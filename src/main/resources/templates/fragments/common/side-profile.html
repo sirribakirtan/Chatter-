@@ -5,9 +5,10 @@
     <title>side-profile</title>
 </head>
 <body>
-<div th:fragment="side-profile" id="side-profile" class="sidenav">
+<div th:fragment="side-profile" id="side-profile">
     <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <script type="text/javascript" th:src="@{/js/common/sideProfile.js}"></script>
+    <a href="javascript:void(0)" id="side-profile-close-button">&times;</a>
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
@@ -15,7 +16,7 @@
 </div>
 <div th:fragment="side-profile-open-button">
     <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
-    <div id="side-profile-button" class="h-100 d-flex justify-content-center align-items-center"
+    <div id="side-profile-open-button" class="h-100 d-flex justify-content-center align-items-center"
          onclick="openNav()">&#9776;</div>
 </div>
 </body>
