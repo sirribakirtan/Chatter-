@@ -1,10 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="fragments/layouts/main.html"
+      lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<div layout:fragment="content" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pages/profile.css}" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <div class="container fixed-top container-sm profile-header">
+        <div class="container-fluid p-4 my-1 bg-light text-black">
+            <div class="row">
+                <div class="col-sm">
+                    <img th:src="@{https://bootdey.com/img/Content/avatar/avatar6.png}" class="img-thumbnail" alt="profile-image" width="150" height="150">
+                </div>
+                <div class="col-sm-10">
+                    <h2  class="m-t-10 m-b-5 ml-3">Name Surname</h2>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col order-last">
+                                First, but last
+                            </div>
+                            <div class="col">
+                                Second, but unordered
+                            </div>
+                            <div class="col order-first mr-">
+                                Third, but first
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Friends</button>
+                                <button type="button" class="btn btn-primary btn-medium my-2 my-sm-0 ">Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="container bg-light">
+                        <br>
+                        <div class="panel-group" id="accordion">
+                            <div class="container-fluid">
+                                <div class="row bg-secondary pt-2">
+                                    <div class="panel panel-default col-sm">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse1">Profile</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default col-sm">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse2">Friends</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default col-sm">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse3">Photos</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default col-sm">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" class="text-warning" data-parent="#accordion" href="#collapse4">Videos</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default col-sm">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title ">
+                                                <a data-toggle="collapse"  class="text-warning"data-parent="#accordion" href="#collapse5">Settings</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-light">
+            <div id="collapse1" class="panel-collapse collapse show">
+                <div class="panel-body text-center">
+                    Profile Section
+                </div>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body text-center">
+                    Friends Section
+                </div>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body text-center">
+                    Photos Section
+                </div>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+                <div class="panel-body text-center">
+                    Videos Section
+                </div>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse">
+                <div class="panel-body text-center">
+                    Settings Section
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
