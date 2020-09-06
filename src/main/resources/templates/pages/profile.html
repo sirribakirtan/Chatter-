@@ -10,36 +10,28 @@
 <div layout:fragment="content">
     <div th:fragment="profile">
         <link rel="stylesheet" type="text/css" th:href="@{/css/pages/profile.css}" />
-        <div class="container container-sm profile-header">
-            <div class="container-fluid p-4 my-1 bg-light text-black">
-                <div class="row">
-                    <div class="col-sm">
-                        <img th:src="@{https://bootdey.com/img/Content/avatar/avatar6.png}" class="img-thumbnail" alt="profile-image" width="150" height="150">
-                    </div>
-                    <div class="col-sm-10">
-                      <div class="row">
-                        <h2  class="m-t-10 m-b-5 ml-3">Name Surname</h2>
-                      </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="container bg-light">
-                            <br>
-                            <div class="panel-group" id="accordion">
-                                <div class="container-fluid">
-                                    <div class="row bg-secondary pt-2 justify-content-around">
-                                        <div th:with="collapseId=${'#collapse-profile'}, name='Profile'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                        <div th:with="collapseId=${'#collapse-friends'}, name='Friends'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                        <div th:with="collapseId=${'#collapse-photos'}, name='Photos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                        <div th:with="collapseId=${'#collapse-videos'}, name='Videos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                        <div th:with="collapseId=${'#collapse-settings'}, name='Settings'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="container-fluid rounded p-4 main-div">
+            <div class="row">
+                <div class="col-sm-12 col-md-2 d-sm-flex d-md-block justify-content-center align-items-center">
+                    <img th:src="@{https://bootdey.com/img/Content/avatar/avatar6.png}" class="img-thumbnail" alt="profile-image" width="150" height="150">
+                </div>
+                <div class="col-sm-12 col-md-10 d-sm-flex d-md-block justify-content-center align-items-center">
+                    <h2 class="m-t-10 m-b-5 ml-3">Name Surname</h2>
+                </div>
+                <div class="col-sm-12 my-4">
+                    <div class="panel-group" id="accordion">
+                        <div class="row rounded bg-secondary justify-content-around">
+<!--                            //FIXME MUST BE CONVERTED TO NAVBAR-->
+                            <div th:with="collapseId=${'#collapse-profile'}, name='Profile'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                            <div th:with="collapseId=${'#collapse-friends'}, name='Friends'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                            <div th:with="collapseId=${'#collapse-photos'}, name='Photos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                            <div th:with="collapseId=${'#collapse-videos'}, name='Videos'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
+                            <div th:with="collapseId=${'#collapse-settings'}, name='Settings'" th:insert="~{fragments/pages/profile/sections :: collapse-section}"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid bg-light">
+            <div class="container-fluid">
                 <div th:replace="~{fragments/pages/profile/sections :: profile}"></div>
                 <div th:replace="~{fragments/pages/profile/sections :: friends}"></div>
                 <div th:replace="~{fragments/pages/profile/sections :: photos}"></div>

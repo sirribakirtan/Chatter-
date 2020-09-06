@@ -10,7 +10,7 @@
 <body>
 <div layout:fragment="content">
     <link rel="stylesheet" type="text/css" th:href="@{css/pages/home.css}"/>
-    <div class="container-fluid rounded" id="home-div">
+    <div class="container-fluid rounded main-div" id="home-div">
         <div class="d-flex w-100 border-bottom border-dark mb-4" th:with="friendList=${user.getFriendList()}">
             <div th:replace="~{fragments/pages/home/friends-list.html :: friends-list}"></div>
             <div th:replace="~{fragments/common/side-profile :: side-profile-open-button}"></div>

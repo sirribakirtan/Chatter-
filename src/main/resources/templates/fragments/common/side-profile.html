@@ -13,8 +13,9 @@
             <span class="h1">&times;</span>
         </button>
     </div>
-    <div id="profile-page-inline-div" class="m-5">
-        <div th:insert="~{pages/profile :: profile}" class="pr-3"></div>
+    <div id="profile-page-inline-div">
+        <div th:replace="~{fragments/layouts/header :: header}"></div>
+        <div th:replace="~{pages/profile :: profile}"></div>
     </div>
 </div>
 <div th:fragment="side-profile-open-button">
