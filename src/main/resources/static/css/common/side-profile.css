@@ -1,38 +1,38 @@
-.sidenav {
-    height: 100%;
+#side-profile {
     width: 0;
-    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    overflow-y: auto;
+    transition: 1s;
+    position: fixed;
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+#side-profile a {
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
+#side-profile #side-profile-close-button {
     position: absolute;
-    top: 0;
+    top: 25px;
     right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    height: 40px;
+    width: 40px;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+#side-profile-open-button {
+    font-size:40px;
+    cursor:pointer;
+}
+
+#profile-page-inline-div {
+
+}
+
+.hide-side-profile {
+    margin-left: -200vw!important;
 }
