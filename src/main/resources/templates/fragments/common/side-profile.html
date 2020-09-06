@@ -13,12 +13,12 @@
             <span class="h1">&times;</span>
         </button>
     </div>
-    <div id="profile-page-inline-div">
+    <div id="profile-page-in-sidebar">
         <div th:replace="~{fragments/layouts/header :: header}"></div>
         <div th:replace="~{pages/profile :: profile}"></div>
     </div>
 </div>
-<div th:fragment="side-profile-open-button">
+<div th:fragment="side-profile-open-button" class="ml-auto">
     <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
     <div id="side-profile-open-button" class="h-100 d-flex justify-content-center align-items-center"
          onclick="openNav()">&#9776;</div>
