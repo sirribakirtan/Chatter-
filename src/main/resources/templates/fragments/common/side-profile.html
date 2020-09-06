@@ -5,14 +5,17 @@
     <title>side-profile</title>
 </head>
 <body>
-<div th:fragment="side-profile" id="side-profile">
+<div th:fragment="side-profile" id="side-profile" class="h-100 background-visual hide-side-profile">
     <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
     <script type="text/javascript" th:src="@{/js/common/sideProfile.js}"></script>
-    <a href="javascript:void(0)" id="side-profile-close-button">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <div id="side-profile-close-button">
+        <button type="button" class="close text-white" aria-label="Close">
+            <span class="h1">&times;</span>
+        </button>
+    </div>
+    <div id="profile-page-inline-div" class="m-5">
+        <div th:insert="~{pages/profile :: profile}" class="pr-3"></div>
+    </div>
 </div>
 <div th:fragment="side-profile-open-button">
     <link rel="stylesheet" type="text/css" th:href="@{css/common/side-profile.css}"/>
