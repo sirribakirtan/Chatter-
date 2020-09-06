@@ -24,7 +24,6 @@ public class SignUpController {
 
     @PostMapping("")
     public String register(@Valid @ModelAttribute("person") Person person, Errors errors, Model model) {
-        System.out.println(person.getEmail());
         if (errors.hasErrors()) {
             return "pages/signup";
         } else {

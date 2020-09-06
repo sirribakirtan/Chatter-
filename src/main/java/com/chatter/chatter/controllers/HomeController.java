@@ -28,7 +28,6 @@ public class HomeController {
         user.getFriendList().add(f4user);
         model.addAttribute("user", user);
         model.addAttribute("messageReceiver", f1user);
-        System.out.println(user);
         return "pages/home";
     }
 

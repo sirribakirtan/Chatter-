@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="fragments/layouts/main.html"
-      lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layouts/main.html}">
 <head>
     <title>Sign Up Here</title>
 </head>
@@ -71,6 +73,7 @@
         </div>
     </div>
 </div>
+<!--//FIXME METHOD MUST BE MOVED TO JS FILE, LOGIC MUST BE FIXED-->
 <script type="text/javascript">
     (function() {
         'use strict';
