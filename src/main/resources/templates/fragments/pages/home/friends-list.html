@@ -5,10 +5,10 @@
     <title>friends-list</title>
 </head>
 <body>
-<div th:fragment="friends-list" id="friends-list" class="w-100 d-none d-md-flex flex-row pb-2">
+<div th:fragment="friends-list" id="friends-list" class="w-100 d-flex flex-row pb-2">
     <!--/*@thymesVar id="friendList" type="List<com.chatter.chatter.models.appModels.User>"*/-->
     <div class="row w-100">
-        <div class="col-md-3 col-lg-2" th:each="friend: ${friendList}">
+        <div class="col-3 col-lg-2" th:each="friend: ${friendList}">
             <div th:replace="~{fragments/pages/home/user-thumbnail.html :: user-thumbnail}"></div>
         </div>
     </div>
